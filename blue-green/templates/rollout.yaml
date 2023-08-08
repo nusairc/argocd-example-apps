@@ -16,8 +16,8 @@ spec:
       release: {{ .Release.Name }}
   strategy:
     blueGreen:
-      activeService: {{ template "helm-guestbook.fullname" . }}-blue-active
-      previewService: {{ template "helm-guestbook.fullname" . }}-green-preview
+      activeService: {{ template "helm-guestbook.fullname" . }}
+      previewService: {{ template "helm-guestbook.fullname" . }}-preview
   template:
     metadata:
       labels:
