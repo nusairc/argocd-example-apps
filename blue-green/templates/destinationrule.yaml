@@ -1,0 +1,13 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: blue-green-destinationrule
+spec:
+  host: blue-green-guestbook-helm-guestbook  
+  subsets:
+    - name: blue
+      labels:
+        app: blue-green-guestbook-helm-guestbook  
+    - name: green
+      labels:
+        app: blue-green-guestbook-helm-guestbook-preview
